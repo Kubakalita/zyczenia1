@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Witaj!</title>
+    <style>
+        body {
+            background-image: url('świeta123.jpg');
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: #8B4513;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        input, button {
+            margin: 10px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+        button {
+            background-color: #FFD700;
+            color: #8B4513;
+            cursor: pointer;
+        }
+        .greetings {
+            margin-top: 20px;
+            font-size: 1.2em;
+            background-color: rgba(255, 255, 255, 0.5); /* Zmieniona przezroczystość */
+            padding: 10px;
+            border-radius: 5px;
+            border: 2px solid transparent;
+        }
+        .author {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 0.8em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <input id="nameInput" type="text" placeholder="Podaj swoje imię" />
+        <button onclick="showGreetings()">Dalej</button>
+        <div id="greetings" class="greetings"></div> <!-- Zmieniono z <p> na <div> -->
+    </div>
+    <div class="author">JakubKalita</div>
+
+    <script>
+        function showGreetings() {
+            var name = document.getElementById('nameInput').value;
+            var greetings = document.getElementById('greetings');
+            if (name.slice(-1) === 'a' && name !== 'Kuba') {
+                greetings.innerHTML = '<p>Szanowna Pani ' + name + ', życzę pani radosnych świąt Wielkanocnych!🐇</p>';
+            } else {
+                greetings.innerHTML = '<p>Szanowany Panie ' + name + ', życzę Ci radosnych Świąt Wielkanocnych!🐰</p>';
+            }
+        }
+    </script>
+</body>
+</html>
